@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+import joblib
 
 data = pd.read_csv("studydata2.csv")
 
@@ -17,15 +18,18 @@ X = data[[
 
 y = data['risk_level']
 
-x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 model = LogisticRegression(max_iter=1000)
 model.fit(x_train, y_train)
 
 print("Model Accuracy:", model.score(x_test, y_test))
 
+joblib.dump(model, "tempmodel.pkl")
+
 print("\n--- Student Risk Prediction ---")
 
+name = input("Student Name: ")
 h = float(input("Hours studied: "))
 att = float(input("Attendance %: "))
 sleep = float(input("Sleep hours: "))
@@ -49,6 +53,7 @@ columns=[
 
 pred = model.predict(new_data)
 
+print(f"\nStudent Name: {name}")
 print("\nPredicted Risk Level:", pred[0])
 
 print("\n--- Suggestions ---")
