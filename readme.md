@@ -47,10 +47,8 @@ The dataset contains the following features:
 attendance-risk-project/
 │
 ├── main.py              # Main prediction script
-├── train_model.py       # Model training script (optional)
-├── data.csv             # Dataset file
-├── model.pkl            # Saved model (optional)
-├── utils.py             # Helper functions (optional)
+├── studydata.csv        # Dataset file
+├── studydata2.csv       # Dataset file 2
 ├── visualization.py     # Data visualization (optional)
 ├── requirements.txt     # Dependencies
 └── README.md            # Project documentation
