@@ -10,7 +10,9 @@ import os
 
 load_dotenv()
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# Use st.secrets for Streamlit Cloud, fall back to .env for local
+api_key = st.secrets.get("GROQ_API_KEY") if "GROQ_API_KEY" in st.secrets else os.getenv("GROQ_API_KEY")
+client = Groq(api_key=api_key)
 
 st.set_page_config(page_title="Student Risk Predictor", page_icon="🎓", layout="wide")
 
