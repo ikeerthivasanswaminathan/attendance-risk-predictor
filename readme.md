@@ -57,6 +57,20 @@ streamlit run app.py
 
 ---
 
+## 📸 Screenshots
+
+### GitHub Page
+
+![alt text](assets/githubpage.png)
+
+### Streamlit Page
+
+![alt text](assets/streamlitpage.png)
+
+#### Giving Input
+
+![alt text](assets/streamlitpageinput.png)
+
 ## Connect with me
 
 GitHub: [https://github.com/your-username](https://github.com/your-username)
