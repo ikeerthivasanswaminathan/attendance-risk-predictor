@@ -1,14 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Risk Predictor</title>
-</head>
-<body>
-    <h1>🎓 Student Risk Predictor</h1>
-    <p>This project predicts student risk using Machine Learning.</p>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Risk Predictor</title>
 
-    <a href="https://attendanceriskpredictor.streamlit.app/">
-        <button>Open Live App</button>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0e1117;
+    color: #ffffff;
+    text-align: center;
+}
+
+.container {
+    padding: 70px 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-bottom: 30px;
+}
+
+/* Button */
+.btn {
+    background: #ff5e00;
+    color: black;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff5e00;
+    transform: scale(1.07);
+}
+
+/* Cards */
+.card-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.card {
+    background: #1c1f26;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    width: 260px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border: 1px solid #ff5e00;
+}
+
+.card h3 {
+    color: #ff5e00;
+}
+
+.card p {
+    color: #9ca3af;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    background: #11151c;
+    color: #9ca3af;
+}
+
+.highlight {
+    color: #ff5e00;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎓 Student Risk Predictor</h1>
+    <p class="subtitle">
+        AI-powered system to analyze student performance and predict 
+        <span class="highlight">risk levels</span>
+    </p>
+
+    <a href="https://attendanceriskpredictor.streamlit.app/" target="_blank">
+        <button class="btn">🚀 Launch Live App</button>
     </a>
+
+    <div class="card-section">
+
+        <div class="card">
+            <h3>📊 Machine Learning</h3>
+            <p>Random Forest model predicts student risk accurately.</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Data Analysis</h3>
+            <p>Evaluates attendance, stress, marks, and habits.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚠️ Risk Levels</h3>
+            <p>Classifies students into Low, Medium, High risk.</p>
+        </div>
+
+        <div class="card">
+            <h3>💡 Smart Suggestions</h3>
+            <p>Provides actionable improvements for better performance.</p>
+        </div>
+
+    </div>
+
+    <div class="social-links">
+    <a href="http://github.com/ikeerthivasanswaminathan" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+    </a>
+
+    <a href="https://linkedin.com/in/ikeerthivasanswaminathan" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+</div>
+
+</div>
+
+<footer>
+    <p>Developed by <b>KEERTHIVASAN S</b> 🚀</p>
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,22 @@
+.social-links {
+    margin-top: 100px;   /* 👈 moves it lower */
+    text-align: center;
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 22px;
+    margin: 18px;
+    color: #ff0000;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links a i {
+    font-size: 22px;
+}
+
+.social-links a:hover {
+    color: #0077b5; /* LinkedIn blue-ish hover */
+}
