@@ -1,133 +1,75 @@
-# 🎓 Student Attendance Risk Prediction System
+# Student Risk Predictor
 
-## 📌 Project Overview
+A simple machine learning project that predicts whether a student is at risk based on study habits and academic performance.
 
-This project is a Machine Learning-based system that predicts whether a student is at risk based on academic and behavioral factors such as study hours, attendance percentage, sleep hours, internal marks, and other performance indicators. It helps identify students who may need academic support early.
-
----
-
-## 🚀 Features
-
-* Predicts student risk level (Low / Medium / High)
-* Uses multiple student performance features
-* Simple CLI-based input system
-* Provides improvement suggestions
-* Built using Machine Learning (Logistic Regression)
+Live demo: [https://attendanceriskpredictor.streamlit.app/](https://attendanceriskpredictor.streamlit.app/)
 
 ---
 
-## 📊 Dataset Information
+## What this project does
 
-The dataset contains the following features:
-
-* hours_studied
-* attendance_percentage
-* sleep_hours
-* internal_marks
-* assignment_score
-* backlogs
-* stress_level
-* internet_usage_hours
-* final_result
-* risk_level
+This app helps estimate student performance risk using basic inputs like study hours, attendance, sleep, and internal marks. It gives a simple output showing whether the student is at low, medium, or high risk.
 
 ---
 
-## 🧠 Machine Learning Model
-
-* Algorithm: Logistic Regression
-* Library: Scikit-learn
-* Task: Classification
-
----
-
-## 📂 Project Structure
-
-```
-attendance-risk-project/
-│
-├── main.py              # Main prediction script
-├── studydata.csv        # Dataset file
-├── studydata2.csv       # Dataset file 2
-├── visualization.py     # Data visualization (optional)
-├── requirements.txt     # Dependencies
-└── README.md            # Project documentation
-```
-
----
-
-## ⚙️ Installation & Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/project-name.git
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the project
-
-```bash
-python main.py
-```
-
----
-
-## ▶️ How it Works
-
-1. User enters student details (study hours, attendance, etc.)
-2. Model processes the input
-3. System predicts risk level
-4. Suggestions are shown based on performance
-
----
-
-## 📈 Example Output
-
-```
-Model Accuracy: 0.87
-
---- Student Risk Prediction ---
-Predicted Risk Level: High
-
---- Suggestions ---
-Improve attendance
-Increase sleep
-Reduce stress
-```
-
----
-
-## 🎯 Future Improvements
-
-* Flask web application
-* Graphical dashboard
-* Advanced ML models (Random Forest / XGBoost)
-* Cloud deployment
-* Real-time student tracking system
-
----
-
-## 🛠️ Technologies Used
+## Tech used
 
 * Python
+* Streamlit
 * Pandas
-* Scikit-learn
 * NumPy
+* Scikit-learn
 
 ---
 
-## 👨‍💻 Author
+## How to run
 
-This project is developed for academic ML learning and student performance analysis.
+```bash
+# clone the repo
+git clone https://github.com/your-username/student-risk-predictor.git
+
+cd student-risk-predictor
+
+# install dependencies
+pip install -r requirements.txt
+
+# run the app
+streamlit run app.py
+```
 
 ---
 
-## ⭐ Outcome
+## Inputs used
 
-Helps in early identification of students at risk and supports academic intervention strategies.
+* Hours studied
+* Classes attended
+* Total classes
+* Sleep hours
+* Internal marks
+
+---
+
+## Output
+
+* Low risk
+* Medium risk
+* High risk
+
+---
+
+## Connect with me
+
+GitHub: [https://github.com/your-username](https://github.com/your-username)
+LinkedIn: [https://linkedin.com/in/your-username](https://linkedin.com/in/your-username)
+
+---
+
+## Note
+
+This is a beginner-friendly ML project created for learning and college-level demonstration.
+
+---
+
+## ⭐ Show Support
+
+If you like this project, please ⭐ the repository and share it!
