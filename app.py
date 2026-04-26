@@ -10,8 +10,19 @@ import os
 
 load_dotenv()
 
-# Use st.secrets for Streamlit Cloud, fall back to .env for local
-api_key = st.secrets.get("GROQ_API_KEY") if "GROQ_API_KEY" in st.secrets else os.getenv("GROQ_API_KEY")
+# Load from .env locally; use Streamlit secrets only if available.
+api_key = os.getenv("GROQ_API_KEY")
+
+try:
+    if not api_key:
+        api_key = st.secrets["GROQ_API_KEY"]
+except Exception:
+    pass
+
+if not api_key:
+    st.error("GROQ_API_KEY not found. Put it in .env locally or in Streamlit secrets for deployment.")
+    st.stop()
+
 client = Groq(api_key=api_key)
 
 st.set_page_config(page_title="Student Risk Predictor", page_icon="🎓", layout="wide")
