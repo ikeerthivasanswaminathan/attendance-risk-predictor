@@ -1,6 +1,5 @@
+streamlit
 pandas
 scikit-learn
-joblib
-flask
-matplotlib
-seaborn
+python-dotenv
+google-genai
