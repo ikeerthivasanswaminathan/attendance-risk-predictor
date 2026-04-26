@@ -4,14 +4,13 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.utils import resample
+from groq import Groq
 from dotenv import load_dotenv
 import os
-from dotenv import load_dotenv
-from google import genai
 
-# Load API key
 load_dotenv()
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 st.set_page_config(page_title="Student Risk Predictor", page_icon="🎓", layout="wide")
 
@@ -85,6 +84,20 @@ if st.button("🚀 Predict Risk"):
                               columns=X.columns)
 
     pred = model.predict(input_data)[0]
+    
+    # Store prediction in session state
+    st.session_state.prediction = pred
+    st.session_state.student_details = {
+        "name": name,
+        "hours_studied": h,
+        "attendance": att,
+        "sleep_hours": sleep,
+        "internal_marks": marks,
+        "assignment_score": assign,
+        "backlogs": backlogs,
+        "stress_level": stress,
+        "internet_usage": internet
+    }
 
     st.write(f"**Student Name:** {name}")
 
@@ -122,15 +135,41 @@ if st.button("🚀 Predict Risk"):
 
 # ---------------- AI CHATBOT ----------------
 st.markdown("---")
-st.subheader("🤖 AI Student Assistant (Gemini)")
+st.subheader("🤖 AI Student Assistant (Groq)")
 
 question = st.text_input("Ask AI about your result")
 
 if question:
-    response = client.models.generate_content(
-    model="models/gemini-2.0-flash",
-    contents=question
-)
+    if question.strip() == "":
+        st.warning("Please enter a question")
+        st.stop()
 
-    st.write(response.text)
-    st.write(response.choices[0].message.content)
+    # Build smart prompt with student details
+    prompt = f"""
+Student Details:
+- Hours Studied: {st.session_state.student_details.get('hours_studied', h)}
+- Classes Attended: {st.session_state.student_details.get('attendance', att)}%
+- Sleep Hours: {st.session_state.student_details.get('sleep_hours', sleep)}
+- Internal Marks: {st.session_state.student_details.get('internal_marks', marks)}
+- Predicted Risk: {'HIGH RISK' if st.session_state.prediction == 2 else 'MEDIUM RISK' if st.session_state.prediction == 1 else 'LOW RISK'}
+
+User Question: {question}
+
+Explain the situation clearly and give suggestions to improve.
+"""
+
+    chat = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an AI assistant helping students understand their academic performance and risk. Give simple, clear advice."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    st.write(chat.choices[0].message.content)
