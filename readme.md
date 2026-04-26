@@ -71,11 +71,11 @@ streamlit run app.py
 
 ![alt text](assets/streamlitpageinput.png)
 
-## Connect with me
+## 🔗 Connect with me
 
-GitHub: [https://github.com/your-username](https://github.com/your-username)
-LinkedIn: [https://linkedin.com/in/your-username](https://linkedin.com/in/your-username)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ikeerthivasanswaminathan)
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ikeerthivasanswaminathan)
 ---
 
 ## Note
